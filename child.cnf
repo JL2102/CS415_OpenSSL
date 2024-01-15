@@ -1,0 +1,28 @@
+[ req ]
+default_bits = 2048
+
+prompt = no
+distinguished_name=req_distinguished_name
+req_extensions = v3_req
+
+[ req_distinguished_name ]
+countryName=US
+stateOrProvinceName=Illinois
+localityName=Peoria
+organizationName=Market(localhost)
+organizationalUnitName=roote department
+commonName=JacksonLowder
+emailAddress=jlowder@mail.bradley.edu
+
+[ alternate_names ]
+DNS.1        = market.localhost
+DNS.2        = www.market.localhost
+DNS.3        = mail.market.localhost
+DNS.4        = ftp.market.localhost
+DNS.5        = *.market.localhost
+
+[ v3_req ]
+keyUsage=digitalSignature
+basicConstraints=CA:true
+subjectKeyIdentifier = hash
+subjectAltName = @alternate_names
